@@ -16,7 +16,11 @@
 
     export default {
         name: "WeatherInfo",
-        components: {WeatherCard}
+        components: {WeatherCard},
+        mounted() {
+           const google =request.get('../fakeAPI/google.json').then(response=> response)
+            console.log(google)
+        }
     }
 
 </script>
