@@ -10,7 +10,7 @@ npm install
 npm run serve
 
 ```
-in parallel
+in parallel to mock api responses for testing
 ```
 npm run test
 
