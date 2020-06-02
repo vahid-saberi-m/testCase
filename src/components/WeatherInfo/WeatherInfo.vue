@@ -1,7 +1,7 @@
 <template>
     <div >
         <div v-for="day in this.days"   :key="day.id">
-            <weather-card :data="day" :google="google"/>
+            <weather-card :data="day" />
         </div>
     </div>
 </template>

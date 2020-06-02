@@ -39,17 +39,15 @@ export const store = new Vuex.Store({
     actions:{
         getData(){
             const baseUrl = 'http://localhost:8181/'
-            // let apiResponse = []
-            const bing = request.get(`${baseUrl}bing`).then(response => this.commit('daysMutation',converter(response.data)))
-            const google = request.get(`${baseUrl}google`).then(response => this.commit('avgTempCalc', response.data['google-services']))
+             request.get(`${baseUrl}bing`).then(response => this.commit('daysMutation',converter(response.data)))
+             request.get(`${baseUrl}google`).then(response => this.commit('avgTempCalc', response.data['google-services']))
 
             const converter = (response) => {
 
                 const result = xmlJson.xml2json(response, {compact: true, spaces: 0});
                 return JSON.parse(result);
             }
-            console.log(google)
-            console.log(bing)
+
         }
     }
 })
