@@ -2,7 +2,6 @@ import axios from 'axios'
 
 
 const instance = axios.create({
-    baseURL: process.env.BASE_URL,
     timeout: 31000,
     headers: {
         Accept: 'application/json'
