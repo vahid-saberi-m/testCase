@@ -18,7 +18,7 @@
         name: "WeatherInfo",
         components: {WeatherCard},
         mounted() {
-           const google =request.get('../fakeAPI/google.json').then(response=> response)
+           const google =request.get('http://localhost:8181/bing').then(response=> response)
             console.log(google)
         }
     }

@@ -1,4 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?>
+HTTP/1.1 200 OK
+Content-Type: xml
+Access-Control-Allow-Origin: *
+
 <main>
     <sadana-services>
         <weather-service>
