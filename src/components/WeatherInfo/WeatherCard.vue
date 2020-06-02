@@ -1,7 +1,7 @@
 <template>
     <div class="weather-row">
             <div class="weak-day">
-                            <p>{{data['day-name']}}</p>
+                            <p>{{data.dayName}}</p>
 
             </div>
             <div class="weather-card">
@@ -24,13 +24,7 @@
 <script>
     export default {
         name: "WeatherCard",
-        props: ['data','google'],
-        data() {
-            return {
-                 dayOfWeak: ''
-            }
-        },
-
+        props: ['data'],
     }
 </script>
 
