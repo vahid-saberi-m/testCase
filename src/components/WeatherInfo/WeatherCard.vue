@@ -3,6 +3,7 @@
         <div v-for="day in this.data" class="weather-row" :key="day.id">
             <div class="weak-day">
                             <p>{{day['day-name']._text}}</p>
+
             </div>
             <div class="weather-card">
                 <div class="weather-icon weather-card-item">
@@ -25,7 +26,7 @@
 <script>
     export default {
         name: "WeatherCard",
-        props: ['data'],
+        props: ['data','google'],
         data() {
             return {
                  dayOfWeak: ''
@@ -33,6 +34,11 @@
         },
         mounted() {
             this.dayOfWeak= this.data[0]['city-name']._text;
+            this.data.forEach((item,index)=>{
+                const googleEst = parseInt(this.google['google-services'][index].max)
+                const avg = (parseInt(item['max-temp']._text) + googleEst)/2
+                item['max-temp']._text= avg
+            })
         }
     }
 </script>

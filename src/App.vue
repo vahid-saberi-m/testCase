@@ -2,6 +2,7 @@
   <div id="app">
     <Header/>
     <WeatherInfo/>
+    <Footer/>
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 
 import Header from "./components/Header";
 import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
+import Footer from "./components/Footer";
 export default {
   name: 'App',
   components: {
     WeatherInfo,
-    Header
+    Header,
+    Footer
   }
 }
 </script>
