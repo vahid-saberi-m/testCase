@@ -23,7 +23,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'iransans','aviny',Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -33,5 +33,13 @@ export default {
   max-width: 1920px;
   width: 100vw;
   direction: rtl;
+}
+@font-face{
+  font-family: iransans;
+  src: url("./assets/fonts/irsans.ttf");
+}
+@font-face{
+  font-family: aviny;
+  src: url("./assets/fonts/aviny.ttf");
 }
 </style>

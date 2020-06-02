@@ -46,5 +46,8 @@
 </script>
 
 <style scoped>
+    div{
+        font-family: 'aviny';
+    }
 
 </style>
