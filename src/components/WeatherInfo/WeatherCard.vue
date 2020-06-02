@@ -30,14 +30,7 @@
                  dayOfWeak: ''
             }
         },
-        mounted() {
-            // this.dayOfWeak= this.data[0]['city-name']._text;
-            // this.data.forEach((item,index)=>{
-            //     const googleEst = parseInt(this.google['google-services'][index].max)
-            //     const avg = (parseInt(item['max-temp']._text) + googleEst)/2
-            //     item['max-temp']._text= avg
-            // })
-        }
+
     }
 </script>
 

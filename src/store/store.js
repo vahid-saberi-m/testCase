@@ -16,8 +16,6 @@ export const store = new Vuex.Store({
     },
     mutations: {
         daysMutation(state,payload){
-            console.log('payload')
-            console.log(payload['weather-service'])
             const bingDays = payload['weather-service'].day
           bingDays.forEach((item)=> {state.days.push({
               dayName: item['day-name']._text,
@@ -31,7 +29,6 @@ export const store = new Vuex.Store({
           })
         },
         avgTempCalc(state,payload){
-            console.log(payload)
             payload.forEach((item,index)=>{
                const prevTemp=state.days[index].temp
                 const avgTemp= (prevTemp+parseInt(item.max))/2
