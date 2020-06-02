@@ -1,20 +1,22 @@
 <template>
-    <div class="weather-row">
-        <div class="weak-day">
-            <p>شنبه</p>
-        </div>
-        <div class="weather-card">
-            <div  class="weather-icon weather-card-item">
-                <img alt="weather icon" src="../../assets/weather.png">
+    <div>
+        <div v-for="day in this.data" class="weather-row" :key="day.id">
+            <div class="weak-day">
+                            <p>{{day['day-name']._text}}</p>
             </div>
-            <div  class="degree weather-card-item">
-                <p>19 درجه سانتی گراد</p>
-            </div>
-            <div  class="weather-desc weather-card-item">
-                <p>وضعیت بارانی</p>
-            </div>
-            <div  class="location weather-card-item">
-                <p>کرج</p>
+            <div class="weather-card">
+                <div class="weather-icon weather-card-item">
+                    <img alt="weather icon" src="../../assets/weather.png">
+                </div>
+                <div class="degree weather-card-item">
+                    <p>{{day['max-temp']._text}}درجه سانتیگراد</p>
+                </div>
+                <div class="weather-desc weather-card-item">
+                    <p>وضعیت {{day['status']._text}}</p>
+                </div>
+                <div class="location weather-card-item">
+                    <p>{{dayOfWeak}}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -22,12 +24,21 @@
 
 <script>
     export default {
-        name: "WeatherCard"
+        name: "WeatherCard",
+        props: ['data'],
+        data() {
+            return {
+                 dayOfWeak: ''
+            }
+        },
+        mounted() {
+            this.dayOfWeak= this.data[0]['city-name']._text;
+        }
     }
 </script>
 
 <style scoped>
-    .weather-row{
+    .weather-row {
         display: flex;
         flex-direction: row;
         width: 80vw;
@@ -35,10 +46,12 @@
         align-items: center;
 
     }
-    .weak-day{
+
+    .weak-day {
         flex-grow: 1;
     }
-    .weather-card{
+
+    .weather-card {
         flex-grow: 9;
         display: flex;
         border: solid #707070 1px;
@@ -46,16 +59,20 @@
         align-items: center;
 
     }
-    .weather-icon{
+
+    .weather-icon {
         flex-grow: 2;
     }
-    .weather-desc{
+
+    .weather-desc {
         flex-grow: 4;
     }
-    .degree{
+
+    .degree {
         flex-grow: 4;
     }
-    .location{
+
+    .location {
         flex-grow: 2;
     }
 </style>

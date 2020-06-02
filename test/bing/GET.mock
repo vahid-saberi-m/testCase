@@ -2,8 +2,7 @@ HTTP/1.1 200 OK
 Content-Type: xml
 Access-Control-Allow-Origin: *
 
-<main>
-    <sadana-services>
+<?xml version='1.0' encoding='UTF-8'?>
         <weather-service>
             <day>
                 <day-name>امروز</day-name>
@@ -57,5 +56,3 @@ Access-Control-Allow-Origin: *
                 <symbol>4</symbol>
             </day>
         </weather-service>
-    </sadana-services>
-</main>
