@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <div v-for="day in this.data" class="weather-row" :key="day.id">
+    <div class="weather-row">
             <div class="weak-day">
-                            <p>{{day['day-name']._text}}</p>
+                            <p>{{data['day-name']}}</p>
 
             </div>
             <div class="weather-card">
@@ -10,16 +9,15 @@
                     <img alt="weather icon" src="../../assets/weather.png">
                 </div>
                 <div class="degree weather-card-item">
-                    <p>{{day['max-temp']._text}}درجه سانتیگراد</p>
+                    <p>{{data.temp}}درجه سانتیگراد</p>
                 </div>
                 <div class="weather-desc weather-card-item">
-                    <p>وضعیت {{day['status']._text}}</p>
+                    <p>وضعیت {{data.status}}</p>
                 </div>
                 <div class="location weather-card-item">
-                    <p>{{dayOfWeak}}</p>
+                    <p>{{this.$store.state.location}}</p>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
@@ -33,12 +31,12 @@
             }
         },
         mounted() {
-            this.dayOfWeak= this.data[0]['city-name']._text;
-            this.data.forEach((item,index)=>{
-                const googleEst = parseInt(this.google['google-services'][index].max)
-                const avg = (parseInt(item['max-temp']._text) + googleEst)/2
-                item['max-temp']._text= avg
-            })
+            // this.dayOfWeak= this.data[0]['city-name']._text;
+            // this.data.forEach((item,index)=>{
+            //     const googleEst = parseInt(this.google['google-services'][index].max)
+            //     const avg = (parseInt(item['max-temp']._text) + googleEst)/2
+            //     item['max-temp']._text= avg
+            // })
         }
     }
 </script>
